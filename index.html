@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <ul>
+        <li><a href="./juegos/tarde.html">DIA</a><span class='flecha'>^</span></li>
+        <li><a href="./juegos/noche.html">NOCHE</a><span class='flecha'>^</span></li>
+    </ul>
+</body>
+
+<script>
+
+    const [tarde, noche] = document.querySelectorAll('a');
+
+    tarde.focus()
+
+    document.onkeyup = (e) => {
+
+        switch (e.keyCode) {
+            case 37:
+                tarde.focus()
+
+                break;
+
+            case 39:
+                noche.focus()
+
+                break;
+
+            case 32:
+                const focusedElement = document.activeElement;
+                focusedElement.click()
+
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
+</script>
+
+</html>

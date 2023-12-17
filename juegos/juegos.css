@@ -1,0 +1,144 @@
+
+@font-face {
+    font-family: Arcade;
+    src: url("../assets/fonts/Arcade.ttf");
+}
+
+@font-face {
+    font-family: Arcade-2;
+    src: url('../assets/fonts/ARCADE-Bold.otf');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 56px;
+    letter-spacing: 10px;
+    text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
+    text-align: center;
+    font-family: "Arcade";
+    margin: 80px 0 0;
+}
+
+.lista-juegos {
+    display: flex;
+    gap: 300px;
+    overflow-y: visible;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    padding: 50px 0;
+    align-items: center;
+}
+
+.lista-juegos::-webkit-scrollbar {
+    appearance: none;
+}
+
+.lista-juegos li {
+    scroll-snap-align: center;
+    flex: none;
+    width: 700px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lista-juegos li:first-child {
+    margin-left: calc(100% - 700px);
+}
+
+.lista-juegos li:last-child {
+    margin-right: calc(100% - 700px);
+}
+
+.juego {
+    padding: 20px;
+    width: 700px;
+    border: 2px solid #49004b;
+    position: relative;
+    transition: .3s;
+    background: #0f003c;
+    height: 520px;
+}
+
+.nombre {
+    font-size: 35px;
+    text-align: center;
+    font-family: "Arcade-2";
+    display: block;
+    height: 35px;
+    margin: auto;
+}
+
+.contenedor-img {
+    overflow: hidden;
+    height: calc(100% - 140px);
+    max-height: 265px;
+    margin: 30px 0;
+}
+
+.contenedor-img img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.juego button {
+    padding: 15px;
+    font-family: "Arcade-2";
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+    margin-left: calc(50% - 100px);
+    background: #bf00c5;
+    box-shadow: 5px 7px 0 0 #49004b;
+    outline: none;
+    border: none;
+}
+
+.juego button:active {
+    animation: votar .1s 1;
+}
+
+@keyframes votar {
+    50% {
+        box-shadow: 0px 3px 0 0 #49004b;
+        transform: scale(.95);
+    }
+
+    100% {
+        box-shadow: 5px 7px 0 0 #49004b;
+        transform: scale(1);
+    }
+}
+
+.numero {
+    transform: rotateZ(45deg);
+    position: absolute;
+    left: -91px;
+    bottom: -91px;
+    border: 2px solid #49004b;
+    background: #49004b;
+    width: 180px;
+    height: 180px;
+}
+
+.numero span {
+    display: block;
+    font-size: 50px;
+    transform: rotateZ(-45deg);
+    position: absolute;
+    top: 15px;
+    left: 75px;
+    font-family: "Arcade";
+}
